@@ -1,3 +1,8 @@
+document.getElementById('winRateInput').addEventListener('input', () => {
+    const winRate = document.getElementById('winRateInput').value
+    if (!(winRate >= 0 && winRate <= 100)) document.getElementById('winRateInput').value = 100
+})
+
 function calculate() {
     event.preventDefault()
 
