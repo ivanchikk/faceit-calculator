@@ -8,6 +8,7 @@ function calculate() {
     let elo = Number(document.getElementById('eloInput').value)
     let matches = Number(document.getElementById('matchesInput').value)
     let winRate = Number(document.getElementById('winRateInput').value) / 100
+    if (!(winRate >= 0 && winRate <= 1)) return
     const lossRate = 1 - winRate
     const eloPerWin = 25
     let WinsOverLosses = Math.ceil(elo / eloPerWin)
@@ -19,7 +20,6 @@ function calculate() {
             document.getElementById('result').innerText = text + winRate + '%'
             break
         case 'Matches':
-            if (!(winRate >= 0 && winRate <= 1)) return
             matches = Math.ceil(WinsOverLosses / WinsOverLossesRate)
             document.getElementById('result').innerText = text + matches
             break
