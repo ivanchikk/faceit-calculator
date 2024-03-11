@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+    <title>Faceit calculator</title>
+
+    <link href="style.css" rel="stylesheet">
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <nav>Faceit calculator</nav>
+    <div class="calculator-type">
+        <div class="box">
+            <input type='radio' id='winRateCalculator' name='radio' value='WinRate'
+                onclick='selectCalculator("winRate")'>
+            <label for='winRateCalculator'>WinRate</label>
+            <div></div>
+        </div>
+        <div class="box">
+            <input type='radio' id='matchesCalculator' name='radio' value='Matches'
+                onclick='selectCalculator("matches")'>
+            <label for='matchesCalculator'>Matches</label>
+            <div></div>
+        </div>
+        <div class="box">
+            <input type='radio' id='eloCalculator' name='radio' value='Elo' onclick='selectCalculator("elo")'>
+            <label for='eloCalculator'>Elo</label>
+            <div></div>
+        </div>
+    </div>
+    <main id="main">
+        <form>
+            <ul>
+                <li id='elo' name='calculator'>
+                    <label for='elo' class='list-label'>Elo</label>
+                    <input type='number' id="eloInput" class="list-input" value='25'>
+                </li>
+                <li id='matches' name='calculator'>
+                    <label for='matches' class='list-label'>Matches</label>
+                    <input type='number' id="matchesInput" class="list-input" value='5'>
+                </li>
+                <li id='winRate' name='calculator'>
+                    <label for='winRate' class='list-label'>WinRate</label>
+                    <input type='number' id="winRateInput" class="list-input" value='60' min='0' max='100'>
+                </li>
+            </ul>
+            <button id='calculateBtn' onclick='calculate()'>Calculate</button>
+        </form>
+        <p id='result'></p>
+    </main>
+</body>
+
+</html>
